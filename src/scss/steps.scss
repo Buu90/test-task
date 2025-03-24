@@ -1,0 +1,113 @@
+.steps {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+  position: relative;
+
+  @media (max-width: 1200px) {
+    padding: 0 30px;
+  }
+  
+  @media (max-width: 1024px) {
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    justify-content: space-between;
+    &:last-child {
+      .steps__icon::after {
+          display: none;
+      }
+  }
+  }
+
+  &__icon {
+    background-color: $blue-2;
+    width: 95px;
+    height: 95px;
+    border: solid 5px $blue-3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+    position: relative;
+    &::after {
+      content: "• • • • •";
+      font-size: 24px;
+      letter-spacing: 5px;
+      color: $gray-4;
+      position: absolute;
+      right: -128px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.3s;
+      @media (max-width: 1024px) {
+        display: none;
+      }
+    }
+  }
+  
+  &__text {
+    margin-top: auto;
+    padding: 0 10px;
+  }
+
+  .steps__icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+
+    &--search { background-image: url('../img/icons/search.svg'); }
+    &--percent { background-image: url('../img/icons/percent.svg'); }
+    &--file { background-image: url('../img/icons/file.svg'); }
+    &--message { background-image: url('../img/icons/message.svg'); }
+    &--money { background-image: url('../img/icons/money.svg'); }
+  }
+
+
+  @media (max-width: 1024px) {
+    &__item { margin-bottom: 30px; }
+    .steps__item::after {
+      font-size: 20px;
+      letter-spacing: 4px;
+      right: -50px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    &__item { margin-bottom: 30px; }
+    .steps__item::after { right: -45px; }
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+
+    &__item { margin-bottom: 15px; }
+    &__icon {
+      width: 75px;
+      height: 75px;
+      border-width: 4px;
+    }
+    .steps__item::after { right: -40px; }
+  }
+
+  @media (max-width: 320px) {
+    &__icon {
+      width: 60px;
+      height: 60px;
+      border-width: 3px;
+    }
+    .steps__item::after { right: -35px; }
+  }
+}

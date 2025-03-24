@@ -1,0 +1,27 @@
+<div class="order-registration">
+  <div class="wrapper">
+    @@include('components/page-heading.html', {"headingTitle": "Оформление", "headingTitleSpan": "Заказа", "headingDescription": "Перед заполнением формы ознакомьтесь с нашей схемой работы!"})
+    <div>
+      @@include('components/steps.html', {})
+    </div>
+    <form class="order-form" action="#" method="POST">
+      <div class="order-form__grid order-form__grid--three-columns">
+          <div class="order-form__item">
+              @@include('components/select.html', {"selectLabel": "Выберите тип системы", "selectName": "system-type"})
+          </div>
+          <div class="order-form__item">
+              @@include('components/input.html', {"inputPlaceholder": "Ваш e-mail", "inputName": "mail"})
+          </div>
+          <div class="order-form__item">
+              @@include('components/input.html', {"inputPlaceholder": "Ваше имя", "inputName": "name"})
+          </div>
+      </div>
+  
+      <div class="order-form__grid order-form__grid--two-columns">
+          <div class="order-form__item">@@include('components/slider.html', { })</div>
+          <div class="order-form__item">@@include('components/upload-button.html', { "title": "Отправить", "styleClass": "btn-blue" })</div>
+          <div class="order-form__item">@@include('components/button.html', { "title": "Отправить", "styleClass": "btn-blue", "styleClassSize": "btn-48" })</div>
+      </div>
+  </form>  
+  </div>
+</div>

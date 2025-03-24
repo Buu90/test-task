@@ -1,0 +1,157 @@
+$blue-1: #43ABF0;
+$blue-2: #3E9CDC;
+$blue-3: #286690;
+$blue-4: #42A9ED;
+$white: #FFFFFF;
+$white-2: #FFFFFFD9;
+$black-1: #000000;
+$black-2: #2A2B30;
+$black-3: #3D4050;
+$black-4: #272733;
+$black-5: #10101DE5;
+$gray-1: #BBBBBB;
+$gray-2: #6F6D7B;
+$gray-3: #C3C3C3;
+$gray-4: #C4C4C4;
+
+@mixin typography($font-family, $font-size, $line-height, $color: $gray-4) {
+    font-family: #{$font-family};
+    font-size: #{$font-size};
+    line-height: #{$line-height};
+    color: #{$color};
+  }
+  
+.ts-logo { @include typography('Raleway-ExtraBold', 28px, 100%, $white); }
+.ts-s { @include typography('Lato-SemiBold', 13px, 100%, $white); }
+.ts-r-13 { @include typography('Lato-Regular', 13px, 100%, $white-2); }
+.ts-r-16 { @include typography('Lato-Regular', 16px, 100%, $white-2); }
+.ts-r-18 { @include typography('Lato-Regular', 18px, 100%, $gray-1); }
+.ts-r-20 { @include typography('Lato-Regular', 20px, 100%, $black-1); }
+.ts-b { @include typography('Lato-Bold', 20px, 100%, $black-1); }
+.ts-sb-18 { @include typography('Lato-SemiBold', 18px, 100%, $white-2); }
+.ts-sb-15 { @include typography('Lato-SemiBold', 15px, 100%, $black-4); }
+.ts-h1 { @include typography('Lato-Bold', 48px, 120%, $black-1); }
+.ts-h2 { @include typography('Lato-Bold', 36px, 100%, $white); }
+
+@media (max-width: 1440px) {
+  .ts-h1 { @include typography('Lato-Bold', 40px, 120%, $black-1); }
+  .ts-h2 { @include typography('Lato-Bold', 32px, 100%, $white); }
+}
+
+@media (max-width: 1024px) {
+  .ts-logo { @include typography('Raleway-ExtraBold', 24px, 100%, $white); }
+  .ts-h1 { @include typography('Lato-Bold', 36px, 120%, $black-1); }
+  .ts-h2 { @include typography('Lato-Bold', 28px, 100%, $white); }
+  .ts-r-20, .ts-b { @include typography('Lato-Regular', 18px, 100%, $black-1); }
+  .ts-r-18, .ts-sb-18 { @include typography('Lato-Regular', 16px, 100%, $gray-1); }
+}
+
+@media (max-width: 768px) {
+  .ts-logo { @include typography('Raleway-ExtraBold', 20px, 100%, $white); }
+  .ts-h1 { @include typography('Lato-Bold', 32px, 120%, $black-1); }
+  .ts-h2 { @include typography('Lato-Bold', 24px, 100%, $white); }
+  .ts-r-20, .ts-b { @include typography('Lato-Regular', 16px, 100%, $black-1); }
+  .ts-r-18, .ts-sb-18 { @include typography('Lato-Regular', 14px, 100%, $gray-1); }
+  .ts-sb-15 { @include typography('Lato-SemiBold', 13px, 100%, $black-4); }
+}
+
+@media (max-width: 480px) {
+  .ts-logo { @include typography('Raleway-ExtraBold', 18px, 100%, $white); }
+  .ts-h1 { @include typography('Lato-Bold', 28px, 120%, $black-1); }
+  .ts-h2 { @include typography('Lato-Bold', 22px, 100%, $white); }
+  .ts-r-20, .ts-b { @include typography('Lato-Regular', 15px, 100%, $black-1); }
+  .ts-r-18, .ts-sb-18 { @include typography('Lato-Regular', 13px, 100%, $gray-1); }
+}
+@media (max-width: 330px) {
+  .ts-r-13 { @include typography('Lato-Regular', 10px, 100%, $white-2); }
+}
+@media (max-width: 320px) {
+  .ts-logo { @include typography('Raleway-ExtraBold', 16px, 100%, $white); }
+  .ts-h1 { @include typography('Lato-Bold', 24px, 120%, $black-1); }
+  .ts-h2 { @include typography('Lato-Bold', 20px, 100%, $white); }
+  .ts-r-20, .ts-b { @include typography('Lato-Regular', 14px, 100%, $black-1); }
+  .ts-r-18, .ts-sb-18 { @include typography('Lato-Regular', 12px, 100%, $gray-1); }
+  .ts-sb-15 { @include typography('Lato-SemiBold', 11px, 100%, $black-4); }
+}
+
+
+@mixin order-form-grid($cols, $margin) {
+  margin-right: $margin;
+  margin-bottom: $margin;
+  width: calc((100% - (($cols - 1) * #{$margin})) / $cols);
+
+  &:nth-child(#{$cols}n) {
+      margin-right: 0;
+  }
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+      @media (max-width: 1300px) {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      &--three-columns > .order-form__item {
+          @include order-form-grid(3, 30px);
+          @media (max-width: 1300px) {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-right: 0;
+          }
+      }
+
+      &--three-columns > .order-form__item:last-child {
+          margin-right: 0;
+      }
+
+      &--two-columns > .order-form__item {
+          margin-bottom: 55px;
+          @media (max-width: 1300px) {
+            margin-bottom: 30px;
+          }
+      }
+
+      &--two-columns > .order-form__item:nth-child(1) {
+          width: 66%;
+          margin-right: 30px;
+          @media (max-width: 1300px) {
+            width: 370px;
+            margin-right: 0;
+          }
+          @media (max-width: 480px) {
+            width: 220px;
+        }
+      }
+
+      &--two-columns > .order-form__item:nth-child(2) {
+          width: calc((100% - 30px) / 3.1);
+          margin-right: 0;
+          @media (max-width: 1300px) {
+            width: 370px;
+          }
+          @media (max-width: 480px) {
+            width: 220px;
+        }
+      }
+
+      &--two-columns > .order-form__item:nth-child(3) {
+          width: 370px;
+          @media (max-width: 1300px) {
+            width: 370px;
+          }
+          @media (max-width: 480px) {
+            width: 220px;
+        }
+      }
+  }
+
+}

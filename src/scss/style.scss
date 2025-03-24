@@ -1,0 +1,26 @@
+@import "fonts";
+@import "reset";
+@import "variables";
+@import "menu";
+@import "main";
+@import "footer";
+@import "buttons";
+@import "order-registration";
+@import "steps";
+@import "select";
+@import "input";
+@import "slider";
+
+html,
+body {
+  font-family: Lato;
+  background-color: $black-1;
+  height: 100%;
+}
+.wrapper {
+  max-width: 1172px;
+  margin: 0 auto;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}

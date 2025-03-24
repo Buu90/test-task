@@ -1,0 +1,147 @@
+.main {
+  background: url('../img/mainBG.jpg');
+  background-size: cover;
+  padding: 200px 30px;
+
+  @media (max-width: 1300px) {
+    background-position: center;
+  }
+
+  @media (max-width: 1024px) {
+    padding: 150px 30px;
+  }
+  @media (max-width: 1200px) {
+    padding: 120px 30px 60px 30px;
+  }
+}
+
+.section {
+  max-width: 780px;
+
+  &__title {
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    
+    span {
+      color: $blue-2;
+    }
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+
+  &__list {
+    position: relative;
+  }
+
+  &__list-item {
+    margin-bottom: 6px;
+    margin-left: 26px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      margin-top: 10px;
+      width: 6px;
+      height: 2px;
+      background: $black-1;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    margin-top: 80px;
+
+    div:first-child {
+      margin-right: 30px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 62px;
+    height: 43px;
+  }
+
+  @media (max-width: 1440px) {
+    max-width: 700px;
+
+    &__title {
+      margin-bottom: 70px;
+    }
+    &__buttons {
+      margin-top: 70px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    max-width: 600px;
+
+    &__title {
+      margin-bottom: 60px;
+    }
+    &__buttons {
+      margin-top: 60px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-width: 500px;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+    &__buttons {
+      margin-top: 50px;
+      flex-direction: column;
+
+      div:first-child {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &__link {
+      padding: 0 40px;
+      height: 40px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+
+    &__title {
+      margin-bottom: 40px;
+    }
+    &__buttons {
+      margin-top: 40px;
+    }
+    &__list-item {
+      margin-left: 20px;
+    }
+    &__link {
+      padding: 0 30px;
+      height: 38px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__buttons {
+      margin-top: 30px;
+    }
+    &__link {
+      padding: 0 20px;
+      height: 35px;
+    }
+  }
+}

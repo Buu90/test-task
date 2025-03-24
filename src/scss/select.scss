@@ -1,0 +1,89 @@
+.select {
+    &__container {
+        position: relative;
+        width: 370px;
+        font-family: Lato-Regular;
+        font-size: 18px;
+
+        @media (max-width: 480px) {
+            width: 240px;
+        }
+    }
+
+    &__box {
+        background-color: $white-2;
+        color: $black-4;
+        padding: 13px;
+        border-radius: 3px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.2s, color 0.2s;
+    }
+
+    &__box--open {
+        background-color: $black-3;
+        color: $white;
+        border-radius: 3px 3px 0 0;
+    }
+
+    &__options-wrapper {
+        display: none;
+        position: absolute;
+        width: 364px;
+        padding: 2px 4px 2px 0;
+        background-color: $black-4;
+        border-radius: 0 0 3px 3px;
+        border: solid 1px $black-3;
+        overflow: hidden;
+
+        @media (max-width: 480px) {
+            width: 220px;
+        }
+
+        &.select__options-wrapper--open {
+            display: block;
+        }
+    }
+    &__options {
+        color: $white;
+        overflow-y: auto;
+        max-height: 200px;
+        display: none;
+        flex-direction: column;
+    }
+    &__options::-webkit-scrollbar {
+        width: 7px;
+    }
+    &__options::-webkit-scrollbar-thumb {
+        background-color: $blue-2;
+        border-radius: 3px;
+    }
+    &__options::-webkit-scrollbar-track {
+        background-color: $black-3;
+        border-radius: 3px;
+    }
+    &__option {
+        padding: 10px 12px;
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    &__option:hover {
+        background-color: $black-3;
+    }
+    &__option--selected {
+        color: $blue-2;
+    }
+    &__arrow path  {
+        position: relative;
+        stroke: $black-1;
+        transition: transform 0.3s;
+    }
+    &__arrow--open  {
+        transform: rotate(180deg);
+    }
+    &__arrow--open path  {
+        stroke: $white;
+    }
+}

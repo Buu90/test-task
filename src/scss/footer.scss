@@ -1,0 +1,135 @@
+.footer {
+  background-color: $black-3;
+
+  &__item {
+    position: relative;
+    color: $gray-3;
+
+    &:nth-child(2) {
+      &::before {
+        content: '';
+        width: 1px;
+        height: 18px;
+        background-color: $gray-4;
+        position: absolute;
+        top: 0;
+        left: -32%;
+        @media (max-width: 1100px) {
+          display: none;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      &::after {
+        content: '';
+        width: 1px;
+        height: 18px;
+        background-color: $gray-4;
+        position: absolute;
+        top: 0;
+        right: -32%;
+        @media (max-width: 1100px) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    @media (max-width: 1100px) {
+      height: auto;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    &__list {
+      padding: 0 30px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    &__list {
+      flex-wrap: wrap;
+      justify-content: space-around;
+      height: auto;
+      padding: 20px 0;
+    }
+
+    &__item {
+      margin-bottom: 15px;
+      text-align: center;
+
+      &:nth-child(2)::before,
+      &:nth-child(4)::after {
+        display: none;
+      }
+    }
+  }
+
+  @media (max-width: 1100px) {
+    li {
+      width: 100%;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__list {
+      flex-direction: column-reverse;
+      margin: 0 auto;
+      padding: 20px 0;
+    }
+    
+    &__item {
+      margin-bottom: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &__list {
+      padding: 10px;
+    }
+
+    &__item {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    &__item {
+      font-size: 12px;
+    }
+  }
+}
+
+.footer__link {
+  &--brand {
+    text-transform: uppercase;
+    margin: 0 4px;
+  }
+}
+
+.footer__icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  &--qiwi { background-image: url('../img/icons/qiwi.svg'); }
+  &--yandex { background-image: url('../img/icons/yandex.svg'); }
+  &--webmoney { background-image: url('../img/icons/webmoney.svg'); }
+  &--email { background-image: url('../img/icons/email.svg'); }
+  &--vk { background-image: url('../img/icons/vk.svg'); }
+}
