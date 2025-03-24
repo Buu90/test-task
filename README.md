@@ -1,4 +1,4 @@
-# gulp-build-v.2
+# test-task
 
 Install:
 
@@ -23,6 +23,20 @@ npm run deploy
 Collect all svg icons into one file:
 
 npm run svgSprive
+
+============================================
+
+ Bonus:
+ 
+ Responsive menu,
+ 
+ sass Mixin grid,
+ 
+ sass Variables,
+ 
+button animation,
+
+uploading files
 
 ============================================
 
@@ -59,21 +73,3 @@ Assembly:
     "webpack-stream": "^7.0.0"
     
 ============================================
-
- Bonus:
- 
- Responsive menu,
- 
- sass Mixin grid,
- 
- sass Variables,
- 
- sass Extension/Inheritance
-
-============================================
-
-Say thanks:
-
-13LAE7wh26hEu7HjnZBdEhbJhxbzB6MAxq BTC/OMNI
-
-0x789739388E91f9244532B3611E977C0d2184d4FF ETH/ERC-20
