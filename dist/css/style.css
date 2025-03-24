@@ -886,16 +886,13 @@ body._touch .menu__list > li._active .menu__arrow {
 }
 
 .steps__icon::after {
-  content: "• • • • •";
+  content: var(--dots-content, "• • • • •");
   font-size: 24px;
   letter-spacing: 5px;
   color: #C4C4C4;
   position: absolute;
-  right: -128px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  left: 118%;
+  white-space: nowrap;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -1318,6 +1315,15 @@ body {
   .steps {
     padding: 0 30px;
   }
+
+  .steps__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .steps__icon::after {
+    left: 125%;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -1353,6 +1359,34 @@ body {
 
   .footer__item {
     margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 1090px) {
+  .steps__icon::after {
+    content: var(--dots-content, "• • •");
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    left: 4%;
+    bottom: -129%;
+  }
+
+  .steps {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .steps__item {
+    margin-bottom: 100px;
+  }
+
+  .steps__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .steps .steps__item::after {
+    right: -45px;
   }
 }
 
@@ -1427,20 +1461,6 @@ body {
     margin-bottom: 30px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-  }
-
-  .steps__icon::after {
-    display: none;
-  }
-
-  .steps__item {
-    margin-bottom: 30px;
-  }
-
-  .steps .steps__item::after {
-    font-size: 20px;
-    letter-spacing: 4px;
-    right: -50px;
   }
 }
 
@@ -1534,19 +1554,6 @@ body {
   .section__link {
     padding: 0 40px;
     height: 40px;
-  }
-
-  .steps {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-
-  .steps__item {
-    margin-bottom: 30px;
-  }
-
-  .steps .steps__item::after {
-    right: -45px;
   }
 }
 
@@ -1757,6 +1764,10 @@ body {
 
   .footer__item {
     font-size: 14px;
+  }
+
+  .steps__icon::after {
+    display: none;
   }
 
   .steps {

@@ -41,17 +41,29 @@
     margin-bottom: 10px;
     transition: all 0.3s;
     position: relative;
+    @media (max-width: 1200px) {
+      width: 70px;
+      height: 70px;
+    }
     &::after {
-      content: "• • • • •";
+      content: var(--dots-content, "• • • • •");
       font-size: 24px;
       letter-spacing: 5px;
-      color: $gray-4;
+      color: #C4C4C4;
       position: absolute;
-      right: -128px;
-      top: 50%;
-      transform: translateY(-50%);
+      left: 118%;
+      white-space: nowrap;
       transition: all 0.3s;
-      @media (max-width: 1024px) {
+      @media (max-width: 1200px) {
+        left: 125%;
+      }
+      @media (max-width: 1090px) {
+        content: var(--dots-content, "• • •");
+        transform: rotate(90deg);
+        left: 4%;
+        bottom: -129%;
+      }
+      @media (max-width: 480px) {
         display: none;
       }
     }
@@ -75,18 +87,14 @@
   }
 
 
-  @media (max-width: 1024px) {
-    &__item { margin-bottom: 30px; }
-    .steps__item::after {
-      font-size: 20px;
-      letter-spacing: 4px;
-      right: -50px;
-    }
-  }
-
-  @media (max-width: 768px) {
+  @media (max-width: 1090px) {
     flex-wrap: wrap;
-    &__item { margin-bottom: 30px; }
+    &__item { 
+      margin-bottom: 100px; 
+    &:last-child {
+      margin-bottom: 0; 
+    }
+    }
     .steps__item::after { right: -45px; }
   }
 

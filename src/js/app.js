@@ -3,5 +3,6 @@ import * as menu from './modules/menu.js'
 import * as select from './modules/select.js'
 import * as uploadBtn from './modules/uploadBtn.js'
 import * as slider from './modules/slider.js'
+import * as stepDots from './modules/stepDots.js'
 
 flsFunctions.isWebp();

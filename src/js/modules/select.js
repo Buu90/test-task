@@ -39,3 +39,4 @@ document.querySelectorAll('.select__container').forEach(selectContainer => {
         }
     });
 });
+
